@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Registro</title>
+</head>
+<body>
+    <h1>Actualizar Registro - ID {{ record_id }}</h1>
+    {% if record %}
+    <form method="POST" action="{{ url_for('update_record', record_id=record_id) }}">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" name="Campo 1" value="{{ record['Campo 1'] }}" required><br>
+
+        <label for="campo2">Campo 2:</label>
+        <input type="text" id="campo2" name="Campo 2" value="{{ record['Campo 2'] }}" required><br>
+        
+        <!-- Agrega más campos según los campos de tu hoja de cálculo -->
+
+        <input type="submit" value="Actualizar">
+    </form>
+    {% else %}
+    <p>No se encontró el registro con ID {{ record_id }}</p>
+    {% endif %}
+</body>
+</html>

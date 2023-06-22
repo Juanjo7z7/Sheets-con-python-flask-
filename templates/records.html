@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registros</title>
+</head>
+<body>
+    <h1>Registros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Juegos </th>
+                <th>Perifericos </th>
+                <!-- Agrega más encabezados según tus necesidades -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ record['juegos'] }}</td>
+                <td>{{ record['perifericos'] }}</td>
+                <!-- Agrega más celdas según los campos de tu hoja de cálculo -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('create_record') }}">Crear nuevo registro</a>
+
+
+</body>
+</html>
